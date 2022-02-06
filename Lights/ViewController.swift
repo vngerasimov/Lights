@@ -9,11 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var isLigthtOn = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateUI()
     }
 
+    fileprivate func updateUI() {
+        view.backgroundColor = isLigthtOn ? .white : .black
+    }
 
+    @IBAction func buttonPressed() {
+        isLigthtOn.toggle()
+        updateUI()
+    }
 }
 
